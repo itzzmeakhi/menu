@@ -1,38 +1,148 @@
-.App {
+@font-face {
+  font-family: 'Allura';
+  src: url('./fonts/Allura-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Kleeone';
+  src: url('./fonts/KleeOne-Regular.ttf');
+}
+
+.app {
+  padding: 10px 20px;
+  margin-bottom: 40px !important;
+}
+
+.gv-img {
+  width: 170px;
+  height: 360px;
+  margin: 10px 100px;
+}
+
+.menu-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
+  color: #0a3d62 !important;
+  font-family: 'Allura', sans-serif;
+  font-size: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu-header:before,
+.menu-header:after {
+  background-color: #778ABA;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 30%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu-header:before {
+  right: 10px;
+  margin-left: -50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-header:after {
+  left: 10px;
+  margin-right: -50%;
+}
+
+.accordion {
+  border: none !important;
+}
+
+.accordion-item {
+  border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+.accordion-body {
+  background-color: #CED6EE !important;
+  border: none !important;
+  padding: 6px 16px 16px 16px !important;
+}
+
+.accordion {
+  background-color: #0a3d62 !important;
+}
+
+.accordion-header .accordion-button {
+  background: #DAE7EE !important;
+  color: #0a3d62 !important;
+  border-radius: 0 !important;
+}
+
+.accordion-button {
+  font-size: 20px !important;
+  font-family: 'Kleeone', sans-serif;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.card {
+  border: none !important;
+  margin-top: 10px;
+}
+
+.card-body {
+  background-color: #E7EBF7 !important;
+  color: #0a3d62 !important;
+  border: none !important;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-body img {
+  width: 14px;
+  height: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-body .h5 {
+  font-family: 'Kleeone', sans-serif;
+  font-size: 16px !important;
+}
+
+.card-title {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-height: 1200px) {
+  .accordion {
+    width: 80%;
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .gv-img {
+    width: 190px;
+    height: 400px;
+    margin: 10px 280px;
+  }
+}
+
+@media only screen and (min-device-width: 1201px) {
+  .accordion {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .gv-img {
+    width: 190px;
+    height: 400px;
+    margin: 10px 780px;
+  }
+
+  .menu-header:before,
+  .menu-header:after {
+    width: 20%;
   }
 }
