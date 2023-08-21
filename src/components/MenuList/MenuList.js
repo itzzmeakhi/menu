@@ -31,7 +31,7 @@ const MenuList = () => {
     getMenuList();
   }, []);
   return (
-    <div>
+    <div className='menulist'>
       {loading ? <Loader /> : (
         <>
           <img src={gvImg} alt='' className='gv-img'/>

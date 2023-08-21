@@ -13,10 +13,16 @@
   margin-bottom: 40px !important;
 }
 
+.menulist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .gv-img {
   width: 170px;
   height: 360px;
-  margin: 10px 100px;
 }
 
 .menu-header {
@@ -33,10 +39,10 @@
   background-color: #778ABA;
   content: "";
   display: inline-block;
-  height: 1px;
+  height: 2px;
   position: relative;
   vertical-align: middle;
-  width: 30%;
+  width: 50%;
 }
 
 .menu-header:before {
@@ -51,6 +57,7 @@
 
 .accordion {
   border: none !important;
+  width: 100% !important;
 }
 
 .accordion-item {
@@ -118,7 +125,7 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-height: 1200px) {
   .accordion {
-    width: 80%;
+    width: 80% !important;
     margin: 0 auto;
   }
 
@@ -131,18 +138,20 @@
 
 @media only screen and (min-device-width: 1201px) {
   .accordion {
-    width: 60%;
-    margin: 0 auto;
+    width: 50% !important;
   }
 
   .gv-img {
     width: 190px;
     height: 400px;
-    margin: 10px 780px;
+  }
+
+  .menu-header {
+    margin: 40px 0px;
   }
 
   .menu-header:before,
   .menu-header:after {
-    width: 20%;
+    width: 50%;
   }
 }

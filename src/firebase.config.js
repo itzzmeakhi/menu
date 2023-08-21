@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAnalytics, logEvent } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA0yP468a6AQiCNveMkFnCDYKviTu1Uoec",
@@ -12,5 +13,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+logEvent(analytics, 'page_loaded');
 
 export const db = getFirestore(app);
+export { analytics };
