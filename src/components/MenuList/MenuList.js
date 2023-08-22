@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import { logEvent } from 'firebase/analytics';
 
 import Loader from '../Loader/Loader';
 
@@ -10,7 +11,7 @@ import nonVegImg from './../../assets/nonveg.jpg';
 import vegImg from './../../assets/veg.jpg';
 import gvImg from './../../assets/gv.png';
 
-import { db } from './../../firebase.config';
+import { db, analytics } from './../../firebase.config';
 
 const MenuList = () => {
   const [categories, setCategories] = useState([]);
@@ -39,7 +40,7 @@ const MenuList = () => {
           {categories.map((category, idx) => {
             const { id, name, doNotShowFoodLabel, dishes } = category;
             return (
-              <Accordion key={id} alwaysOpen data-bs-theme="dark">
+              <Accordion key={id} alwaysOpen data-bs-theme="dark" onClick={() => logEvent(analytics, name.replaceAll(/[']/g, ''))}>
                 <Accordion.Item eventKey={idx}>
                   <Accordion.Header>{name}</Accordion.Header>
                   <Accordion.Body>
